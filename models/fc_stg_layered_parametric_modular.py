@@ -50,7 +50,7 @@ class FeatureSelector(nn.Module):
         self.mu = B
         for dense in self.hyper_dense_layers:
             self.mu = dense(self.mu)
-        z = self.mu + (self.sigma)*self.noise.normal_()*self.training 
+#         z = self.mu + (self.sigma)*self.noise.normal_()*self.training 
         stochastic_gate = self.hard_sigmoid(z)
         return stochastic_gate
         
