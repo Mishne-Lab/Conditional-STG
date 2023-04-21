@@ -34,7 +34,7 @@ class FeatureSelector(nn.Module):
             
         self.hyper_dense_layers.append(nn.Tanh())
         
-        self.noise = torch.randn(hyper_input_dim,) 
+        self.noise = torch.randn(hyper_output_dim,) 
         self.sigma = nn.Parameter(torch.tensor([sigma]), requires_grad=False)
 
     
