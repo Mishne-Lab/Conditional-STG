@@ -25,7 +25,7 @@ class FeatureSelector(nn.Module):
 #         print(self.non_param_stg)
         # Define hyper network 
         if self.non_param_stg:
-            self.mu = torch.nn.Parameter(0.01*torch.randn(self.hyper_output_dim, ), requires_grad=True)
+            self.mu = torch.nn.Parameter(0.01*torch.randn(self.hyper_output_dim, )+0.5, requires_grad=True)
         else:
             self.hyper_dense_layers = nn.ModuleList()
             if len(hyper_hidden_dim):
@@ -53,10 +53,9 @@ class FeatureSelector(nn.Module):
             new_x = prev_x * stochastic_gate[:,:]
         return new_x
     
-    def get_feature_importance(self,B):
+    def get_feature_importance(self,B=None):
         # compute feature importance given contextual input (B)
         if not self.non_param_stg:
-            
             self.mu = B
             for dense in self.hyper_dense_layers:
                 self.mu = dense(self.mu)
