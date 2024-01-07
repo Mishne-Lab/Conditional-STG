@@ -13,3 +13,4 @@ Created on Sat Jun 13 15:34:25 2020
 from .fc_stg_layered_parametric_modular import *
 # from .fc_stg_layered_parametric_modular_half_tanh import *
 from .fc_stg_layered_parametric_modular_sigmoid import *
+from .fc_stg_layered_parametric_modular_sigmoid_extension import *
