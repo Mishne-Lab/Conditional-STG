@@ -150,5 +150,5 @@ class FC_STG_Layered_Param_modular_model_sigmoid_extension(nn.Module):
     
 def fc_stg_layered_param_modular_model_sigmoid_extension(input_dim,hidden_dim=[10],output_dim=1, param_dim=1, hyper_hidden_dim=[500], dropout=0, sigma=0.5, stg=True,classification=True,include_B_in_input=False,non_param_stg=False,train_sigma=False):
     
-    model = FC_STG_Layered_Param_modular_model_sigmoid(input_dim, hidden_dim, output_dim, param_dim, hyper_hidden_dim, dropout, sigma, stg,classification,include_B_in_input=include_B_in_input,non_param_stg=non_param_stg,train_sigma=train_sigma)
+    model = FC_STG_Layered_Param_modular_model_sigmoid_extension(input_dim, hidden_dim, output_dim, param_dim, hyper_hidden_dim, dropout, sigma, stg,classification,include_B_in_input=include_B_in_input,non_param_stg=non_param_stg,train_sigma=train_sigma)
     return model
